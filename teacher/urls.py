@@ -17,6 +17,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
 	(r'^teachers/', include('teachers.urls')),
+
+	(r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'index.html'}),
 )
 
 if settings.DEBUG:
