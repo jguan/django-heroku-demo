@@ -1,0 +1,18 @@
+{% extends "teachers/base.html" %}
+
+{% block title %}Teachers{% endblock %}
+
+{% block content %}
+<h1>Teachers</h1>
+
+{% if teacher_list %}
+    <ul>
+    {% for teacher in teacher_list %}
+        <li><a href="/teachers/{{ teacher.id }}/">{{ teacher.name }}</a></li>
+    {% endfor %}
+    </ul>
+	<p><a href="/teachers/students/">All Students</a></p>
+{% else %}
+    <p>No data is available.</p>
+{% endif %}
+{% endblock %}
