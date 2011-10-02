@@ -8,10 +8,11 @@
 {% if student_list %}
     <ul>
     {% for s in student_list %}
-        <li><a href="/teachers/students/{{ s.id }}/">{{ s.name }}</a></li>
+        <li><a href="/teachers/students/{{ s.id }}/">{{ s.name }}</a> | | <a href="/teachers/students/delete/{{ s.id }}/">Delete</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>No data is available.</p>
 {% endif %}
+	 <p><a href="/teachers/">All Teachers</a></p>
 {% endblock %}

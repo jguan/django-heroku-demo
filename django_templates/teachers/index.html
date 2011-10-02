@@ -5,14 +5,22 @@
 {% block content %}
 <h1>Teachers</h1>
 
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+
 {% if teacher_list %}
     <ul>
     {% for teacher in teacher_list %}
-        <li><a href="/teachers/{{ teacher.id }}/">{{ teacher.name }}</a></li>
+        <li>
+            <a href="/teachers/{{ teacher.id }}/">{{ teacher.name }}</a> | 
+            <a href="/teachers/delete/{{ teacher.id }}/">Delete</a> | 
+            <a href="/teachers/{{ teacher.id }}/new/">Add Student</a> 
+        </li>
     {% endfor %}
     </ul>
-	<p><a href="/teachers/students/">All Students</a></p>
 {% else %}
     <p>No data is available.</p>
 {% endif %}
+	<p><a href="/teachers/new/">Add Teacher</a> | <a href="/teachers/students/">All Students</a></p>
 {% endblock %}
